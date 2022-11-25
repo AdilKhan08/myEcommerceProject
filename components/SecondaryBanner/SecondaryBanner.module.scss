@@ -1,0 +1,155 @@
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  
+  .foot_banner {
+    width: 100%;
+    @include flexCenter(space-between, row, center);
+    padding: 4rem 3rem;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color:rgba(0,0,0.1);
+    color: white;
+  
+    .info_one {
+      flex-basis: 35%;
+      margin-left: 2rem;
+      @include flexCenter(center, column, flex-start);
+  
+      span {
+        text-transform: capitalize;
+      }
+  
+      h1 {
+        margin: 0;
+        font-size: 80px;
+        text-transform: uppercase;
+      }
+  
+      small {
+        margin-top: 50px;
+        text-transform: capitalize;
+      }
+    }
+  
+    .info_two {
+      flex-basis: 30%;
+      @include flexCenter(center, column, flex-start);
+  
+      span {
+        text-transform: lowercase;
+      }
+  
+      h1 {
+        margin: 0;
+        text-transform: capitalize;
+        font-size: 60px;
+      }
+  
+      p {
+        text-align: left;
+      }
+  
+      button {
+        border: none;
+        padding: 0.5rem;
+        background-color: #f02d34;
+        font-weight: bold;
+        font-size: 18px;
+        color:white;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+    }
+  
+    img {
+      position: absolute;
+      top: 0%;
+      right: 30%;
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .foot_banner {
+      width: 100%;
+      @include flexCenter(space-between, column, flex-start);
+      padding: 2rem 1.5rem;
+      position: relative;
+      margin-top: 100px;
+      border-radius: 0px;
+      background-color: #f02d34;
+      color: white;
+  
+      .info_one {
+        margin-left: 0.4rem;
+        @include flexCenter(center, column, flex-start);
+  
+        span {
+          text-transform: capitalize;
+          position: relative;
+          z-index: 1;
+        }
+  
+        h1 {
+          margin: 0;
+          font-size: 60px;
+          text-transform: uppercase;
+          position: relative;
+          z-index: 1;
+        }
+  
+        small {
+          margin-top: 40px;
+          text-transform: capitalize;
+          position: relative;
+          z-index: 1;
+        }
+      }
+  
+      .info_two {
+        flex-basis: 100%;
+        @include flexCenter(center, column, flex-end);
+        //   position: relative;
+        //   z-index: 1;
+        margin-right: 5%;
+        margin-top: 35px;
+  
+        h1 {
+          margin: 5px 0;
+          font-size: 40px;
+        }
+  
+        p {
+          width: 80%;
+          text-align: right;
+          font-weight: 200;
+          margin: 5px 0;
+        }
+  
+        button {
+          padding: 0.4rem;
+          font-size: 16px;
+          right: 30%;
+          margin-top: 35px;
+        }
+      }
+  
+      img {
+        top: -2%;
+        right: 10%;
+        width: 390px;
+        height: 390px;
+      }
+    }
+  }

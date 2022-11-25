@@ -1,1 +1,17 @@
 
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  .layout {
+    max-width: 100%;
+    .main {
+      max-width: 1350px;
+      margin: 0 auto;
+    }
+    margin: 0 auto;
+  }
+  

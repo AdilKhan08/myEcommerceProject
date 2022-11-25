@@ -1,0 +1,110 @@
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  
+  .victory_container {
+    @include flexCenter(center, column, center);
+    height: 750px;
+    width: 100%;
+  
+    .victory {
+      @include flexCenter(center, column, center);
+  
+      width: 70%;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 2rem 1rem;
+      border-radius: 20px;
+      h1 {
+        font-size: 50px;
+        margin: 10px 0;
+        color: green;
+      }
+      .message {
+        @include flexCenter(center, column, center);
+        h1 {
+          font-size: 30px;
+          margin: 0;
+          color: #324d67;
+        }
+        small {
+          margin-top: 5px;
+          font-size: 17px;
+        }
+        margin: 20px 0;
+      }
+      small {
+        span {
+          color: #f02d34;
+        }
+      }
+      button {
+        margin-top: 30px;
+        padding: 0.5rem 2rem;
+        border: none;
+        background-color: #f02d34;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .victory_container {
+      @include flexCenter(center, column, center);
+      height: 500px;
+      width: 100%;
+  
+      .victory {
+        @include flexCenter(center, column, center);
+        width: 90%;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1rem 0.5rem;
+        border-radius: 20px;
+        h1 {
+          font-size: 40px;
+          margin: 10px 0;
+          color: green;
+        }
+        .message {
+          @include flexCenter(center, column, center);
+          h1 {
+            font-size: 18px;
+            margin: 0;
+          }
+          small {
+            margin-top: 5px;
+            font-size: 12px;
+          }
+          margin: 20px 0;
+        }
+        small {
+          text-transform: capitalize;
+          font-size: 14;
+          @include flexCenter(center, row, center);
+          margin-right: 5px;
+          span {
+            font-size: 16;
+            color: #f02d34;
+            text-transform: capitalize;
+          }
+        }
+        button {
+          margin-top: 30px;
+          padding: 0.4rem 1rem;
+          border: none;
+          background-color: #f02d34;
+          color: white;
+          text-transform: uppercase;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  

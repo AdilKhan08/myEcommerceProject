@@ -6,12 +6,12 @@ const Home = ({ items, banners }) => {
   return (
     <>
       <MainBanner banner={banners && banners[0]} />
-      <div className={styles.product_container}>
+      <div className={styles.item_container}>
         <h1>Best Seller Products</h1>
         <p>speaker There are many variations passages</p>
         <div className={styles.Items}>
           {items?.map((item, i) => (
-            <Items key={i} items={Items} />
+            <Items key={i} item={item} />
           ))}
         </div>
       </div>

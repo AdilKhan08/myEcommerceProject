@@ -1,0 +1,52 @@
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  
+  .item_container{
+    width: 80%;
+    @include flexCenter(center, column, center);
+    // border: 2px solid red;
+    margin: 50px auto;
+    h1 {
+      margin: 0;
+      text-transform: capitalize;
+      font-size: 45px;
+      color: #324d67;
+    }
+    p {
+      font-weight: 100;
+      color: #1f2633;
+      margin: 0;
+    }
+    .Items {
+      // border: 1px solid red;
+      width: 100%;
+      @include flexCenter(center, row, center);
+      margin-top: 35px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .item_container {
+      width: 100%;
+      h1 {
+        font-size: 35px;
+      }
+      p {
+        font-weight: 200;
+        // color: #1f2633;
+        color: #324d67;
+        margin: 0;
+        font-size: 15px;
+      }
+      .Items{
+        width: 100%;
+        @include flexCenter(center, row, center);
+        margin-top: 23px;
+      }
+    }
+  }
+  

@@ -1,0 +1,207 @@
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  
+  .main_banner_containers {
+    margin-top:20px;
+    width: 100%;
+    @include flexCenter(center, column, flex-start);
+    padding: 3rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    position: relative;
+    .banner_info {
+      width: 100%;
+      @include flexCenter(center, column, flex-start);
+      overflow: hidden;
+      span {
+        color: #1f2633;
+        font-size: 25px;
+        text-transform: capitalize;
+        margin: 0;
+        margin-left: 12px;
+        //border: 2px solid blue;
+        margin-top: 10px;
+      }
+      h2 {
+        font-size: 50px;
+        padding-left: 1.2rem;
+        text-transform: capitalize;
+        margin: 0;
+        z-index: 5;
+      }
+      h1 {
+        max-width: 100%;
+        font-size: 190px;
+        text-transform: uppercase;
+        color: white;
+        margin: 0px;
+        padding: 0;
+        transform: translateY(-35px);
+        overflow: hidden;
+        z-index: 1;
+        opacity: 0.8;
+
+      }
+    }
+    .banner_details {
+      width: 100%;
+      // border: 3px solid gold;
+      @include flexCenter(space-between, row, space-between);
+      flex-wrap: wrap;
+      padding: 0 0.3rem;
+      position: relative;
+      z-index: 1;
+      .button_details {
+        .button {
+          border: none;
+          padding: 0.6rem;
+          color: white;
+          font-weight: bold;
+          font-size: 20px;
+          background-color: black;
+          border-radius: 10px;
+          position: relative;
+          z-index: 1;
+          cursor: pointer;
+        }
+      }
+      .desc {
+        flex-basis: 27%;
+        margin-right: 5%;
+        h3 {
+          margin: 0;
+          text-align: right;
+          color:white;
+        }
+        p {
+          // border: 4px solid green;
+          color:white;
+          text-align: right;
+          font-weight: 200;
+        //   display: none;
+        }
+        margin-top: 20px;
+      }
+    }
+    img {
+      position: absolute;
+      top: 5%;
+  
+      right: 20%;
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+    
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .main_banner_containers {
+      padding: 2rem 1.2rem;
+      border-radius: 0px;
+      .banner_info {
+        overflow: hidden;
+        span {
+          font-size: 18px;
+          margin-top: 10px;
+          margin-left: 7px;
+        }
+        h2 {
+          font-size: 35px;
+          margin-top: 10px;
+        }
+        h1 {
+          font-size: 50px;
+          margin-top: 10px;
+          transform: translateY(-5px);
+        }
+      }
+      .banner_details {
+        .button_details {
+          margin-top: 90px;
+          .button {
+            font-size: 15px;
+            padding: 0.5rem;
+          }
+        }
+        .desc {
+          flex-basis: 100%;
+          margin-right: 5%;
+          h3 {
+            margin: 0;
+            margin-top: 5px;
+            text-align: right;
+            position: relative;
+            z-index: 2;
+            font-size: 18px;
+          }
+          p {
+            color: white;
+            font-size: 14px;
+          }
+          margin-top: 20px;
+        }
+      }
+      img {
+        top: 5%;
+        right: -5%;
+        width: 330px;
+        height: 330px;
+      }
+      overflow: hidden;
+    }
+  }
+  @media screen and (min-width: 551px) and (max-width: 900px) {
+    .main_banner_containers {
+      padding: 2.5rem 1.5rem;
+      padding-top: 5rem;
+      border-radius: 0px;
+  
+      .banner_info {
+        overflow: hidden;
+        span {
+          font-size: 22px;
+          margin-top: 10px;
+        }
+        h2 {
+          font-size: 45px;
+          padding-left: 1.2rem;
+          margin-top: 10px;
+        }
+        h1 {
+          font-size: 140px;
+          transform: translateY(-5px);
+          margin-top: 10px;
+        }
+      }
+      .banner_details {
+        padding: 0.3rem;
+        .button_details {
+          margin-top: 50px;
+          .button {
+            font-size: 16px;
+            padding: 0.6rem;
+          }
+        }
+        .desc {
+          flex-basis: 100%;
+          margin-right: 5%;
+          margin-top: 20px;
+        }
+      }
+      img {
+        position: absolute;
+        top: 5%;
+        right: 3%;
+        width: 450px;
+        height: 450px;
+        object-fit: cover;
+      }
+    }
+  }
+  

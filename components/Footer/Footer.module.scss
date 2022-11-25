@@ -1,0 +1,35 @@
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  
+  .footer {
+    @include flexCenter(center, column, center);
+    padding: 1.5rem 0;
+    .copyRight {
+      @include flexCenter(center, row, center);
+      padding: 0.5rem 0;
+      color: #324d67;
+      span {
+        font-size: 18px;
+        margin: 0 5px;
+        margin-top: 5px;
+      }
+      h3 {
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+    .icons {
+      @include flexCenter(center, row, center);
+      span {
+        font-size: 28px;
+        color: #324d67;
+        margin: 0 5px;
+      }
+    }
+  }
+  

@@ -1,0 +1,35 @@
+@mixin flexCenter($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+  }
+  
+  .product_card {
+    //   border: 2px solid red;
+    @include flexCenter(center, column, flex-start);
+    margin: 0 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    .card {
+      // border: 2px solid blue;
+      object-fit: cover;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+    }
+    .card_info {
+      @include flexCenter(center, column, flex-start);
+      padding: 0.4rem 0.7rem;
+      .product_name {
+        font-size: 16px;
+        margin-bottom: 3px;
+        color: #324d67;
+      }
+      .product_price {
+        font-weight: bold;
+        @include flexCenter(center, row, center);
+      }
+    }
+  }
+  
